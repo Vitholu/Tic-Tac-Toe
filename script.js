@@ -8,6 +8,17 @@ const gameBoard = (() => {
 	return { gameBoardArray, Player };
 })();
 
+const displayController = (() => {
+	const Display = (posY, posX, id) => {
+		let displayX = document.querySelector(id.toString());
+
+		if (displayX !== null) {
+			displayX.textContent = gameBoard.gameBoardArray[posY][posX];
+		}
+	};
+	return { Display };
+})();
+
 const squareBoard = document.querySelectorAll('.square');
 
 squareBoard.forEach((e) => {
@@ -17,16 +28,19 @@ squareBoard.forEach((e) => {
 			case '0':
 				if (gameBoard.gameBoardArray[0][0] !== 'x') {
 					gameBoard.Player(0, 0);
+					displayController.Display(0, 0, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '1':
 				if (gameBoard.gameBoardArray[0][1] !== 'x') {
 					gameBoard.Player(0, 1);
+					displayController.Display(0, 1, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '2':
 				if (gameBoard.gameBoardArray[0][2] !== 'x') {
 					gameBoard.Player(0, 2);
+					displayController.Display(0, 2, '#\\3' + e.target.id + ' ');
 				}
 				break;
 
@@ -34,32 +48,38 @@ squareBoard.forEach((e) => {
 			case '3':
 				if (gameBoard.gameBoardArray[1][0] !== 'x') {
 					gameBoard.Player(1, 0);
+					displayController.Display(1, 0, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '4':
 				if (gameBoard.gameBoardArray[1][1] !== 'x') {
 					gameBoard.Player(1, 1);
+					displayController.Display(1, 1, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '5':
 				if (gameBoard.gameBoardArray[1][2] !== 'x') {
 					gameBoard.Player(1, 2);
+					displayController.Display(1, 2, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			// Row 3
 			case '6':
 				if (gameBoard.gameBoardArray[2][0] !== 'x') {
 					gameBoard.Player(2, 0);
+					displayController.Display(2, 0, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '7':
 				if (gameBoard.gameBoardArray[2][1] !== 'x') {
 					gameBoard.Player(2, 1);
+					displayController.Display(2, 1, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '8':
 				if (gameBoard.gameBoardArray[2][2] !== 'x') {
 					gameBoard.Player(2, 2);
+					displayController.Display(2, 2, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			default:
