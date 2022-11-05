@@ -1,0 +1,27 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 130px);
+	grid-template-rows: repeat(3, 130px);
+	margin-left: 45rem;
+	margin-top: 15rem;
+}
+.container > * {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 6rem;
+}
+
+.s3,
+.s4,
+.s5 {
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.s1,
+.s4,
+.s7 {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
