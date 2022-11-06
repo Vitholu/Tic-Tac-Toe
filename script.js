@@ -9,7 +9,7 @@ const gameBoard = (() => {
 		if (turn % 2 !== 0) {
 			gameBoard.gameBoardArray[posY][posX] = 'x';
 		}
-		console.log(gameBoardArray);
+		// console.log(gameBoardArray);
 	};
 
 	return { gameBoardArray, Player };
@@ -17,9 +17,12 @@ const gameBoard = (() => {
 
 const winCondition = () => {
 	if (
-		gameBoard.gameBoardArray[0][0] === 'x' &&
-		gameBoard.gameBoardArray[0][1] === 'x' &&
-		gameBoard.gameBoardArray[0][2] === 'x'
+		(gameBoard.gameBoardArray[0][0] === 'x' &&
+			gameBoard.gameBoardArray[0][1] === 'x' &&
+			gameBoard.gameBoardArray[0][2] === 'x') ||
+		(gameBoard.gameBoardArray[0][0] === 'o' &&
+			gameBoard.gameBoardArray[0][1] === 'o' &&
+			gameBoard.gameBoardArray[0][2] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
@@ -29,81 +32,109 @@ const winCondition = () => {
 		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[1][0] === 'x' &&
-		gameBoard.gameBoardArray[1][1] === 'x' &&
-		gameBoard.gameBoardArray[1][2] === 'x'
+		(gameBoard.gameBoardArray[1][0] === 'x' &&
+			gameBoard.gameBoardArray[1][1] === 'x' &&
+			gameBoard.gameBoardArray[1][2] === 'x') ||
+		(gameBoard.gameBoardArray[1][0] === 'o' &&
+			gameBoard.gameBoardArray[1][1] === 'o' &&
+			gameBoard.gameBoardArray[1][2] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('1 -- Three');
+		round = 0;
+		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[2][0] === 'x' &&
-		gameBoard.gameBoardArray[2][1] === 'x' &&
-		gameBoard.gameBoardArray[2][2] === 'x'
+		(gameBoard.gameBoardArray[2][0] === 'x' &&
+			gameBoard.gameBoardArray[2][1] === 'x' &&
+			gameBoard.gameBoardArray[2][2] === 'x') ||
+		(gameBoard.gameBoardArray[2][0] === 'o' &&
+			gameBoard.gameBoardArray[2][1] === 'o' &&
+			gameBoard.gameBoardArray[2][2] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('2 -- Three');
+		round = 0;
+		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[0][0] === 'x' &&
-		gameBoard.gameBoardArray[1][0] === 'x' &&
-		gameBoard.gameBoardArray[2][0] === 'x'
+		(gameBoard.gameBoardArray[0][0] === 'x' &&
+			gameBoard.gameBoardArray[1][0] === 'x' &&
+			gameBoard.gameBoardArray[2][0] === 'x') ||
+		(gameBoard.gameBoardArray[0][0] === 'o' &&
+			gameBoard.gameBoardArray[1][0] === 'o' &&
+			gameBoard.gameBoardArray[2][0] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('0-0 -- Three');
+		round = 0;
+		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[0][1] === 'x' &&
-		gameBoard.gameBoardArray[1][1] === 'x' &&
-		gameBoard.gameBoardArray[2][1] === 'x'
+		(gameBoard.gameBoardArray[0][1] === 'x' &&
+			gameBoard.gameBoardArray[1][1] === 'x' &&
+			gameBoard.gameBoardArray[2][1] === 'x') ||
+		(gameBoard.gameBoardArray[0][1] === 'o' &&
+			gameBoard.gameBoardArray[1][1] === 'o' &&
+			gameBoard.gameBoardArray[2][1] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('1-1 -- Three');
+		round = 0;
+		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[0][2] === 'x' &&
-		gameBoard.gameBoardArray[1][2] === 'x' &&
-		gameBoard.gameBoardArray[2][2] === 'x'
+		(gameBoard.gameBoardArray[0][2] === 'x' &&
+			gameBoard.gameBoardArray[1][2] === 'x' &&
+			gameBoard.gameBoardArray[2][2] === 'x') ||
+		(gameBoard.gameBoardArray[0][2] === 'o' &&
+			gameBoard.gameBoardArray[1][2] === 'o' &&
+			gameBoard.gameBoardArray[2][2] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('2-2 -- Three');
+		round = 0;
+		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[0][0] === 'x' &&
-		gameBoard.gameBoardArray[1][1] === 'x' &&
-		gameBoard.gameBoardArray[2][2] === 'x'
+		(gameBoard.gameBoardArray[0][0] === 'x' &&
+			gameBoard.gameBoardArray[1][1] === 'x' &&
+			gameBoard.gameBoardArray[2][2] === 'x') ||
+		(gameBoard.gameBoardArray[0][0] === 'o' &&
+			gameBoard.gameBoardArray[1][1] === 'o' &&
+			gameBoard.gameBoardArray[2][2] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('0-0-0 -- Three');
+		round = 0;
+		return true;
 	}
 	if (
-		gameBoard.gameBoardArray[0][2] === 'x' &&
-		gameBoard.gameBoardArray[1][1] === 'x' &&
-		gameBoard.gameBoardArray[2][0] === 'x'
+		(gameBoard.gameBoardArray[0][2] === 'x' &&
+			gameBoard.gameBoardArray[1][1] === 'x' &&
+			gameBoard.gameBoardArray[2][0] === 'x') ||
+		(gameBoard.gameBoardArray[0][2] === 'o' &&
+			gameBoard.gameBoardArray[1][1] === 'o' &&
+			gameBoard.gameBoardArray[2][0] === 'o')
 	) {
 		gameBoard.gameBoardArray[0] = [];
 		gameBoard.gameBoardArray[1] = [];
 		gameBoard.gameBoardArray[2] = [];
 		turn = 0;
-		console.log('1-1-1 -- Three');
+		round = 0;
+		return true;
 	}
 };
 
@@ -138,20 +169,49 @@ squareBoard.forEach((e) => {
 			case '0':
 				if (winCondition && round === 0) {
 					displayController.resetDisplayBoard();
-				}
-				if (gameBoard.gameBoardArray[0][0] !== 'x') {
+					if (
+						gameBoard.gameBoardArray[0][0] !== 'x' &&
+						gameBoard.gameBoardArray[0][0] !== 'o'
+					) {
+						gameBoard.gameBoardArray[0] = [];
+						gameBoard.gameBoardArray[1] = [];
+						gameBoard.gameBoardArray[2] = [];
+						console.log(gameBoard.gameBoardArray);
+						round = 1;
+					}
+				} else if (
+					gameBoard.gameBoardArray[0][0] !== 'x' &&
+					gameBoard.gameBoardArray[0][0] !== 'o'
+				) {
 					gameBoard.Player(0, 0, ++turn);
 					displayController.Display(0, 0, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '1':
-				if (gameBoard.gameBoardArray[0][1] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (
+					gameBoard.gameBoardArray[0][1] !== 'x' &&
+					gameBoard.gameBoardArray[0][1] !== 'o'
+				) {
 					gameBoard.Player(0, 1, ++turn);
 					displayController.Display(0, 1, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '2':
-				if (gameBoard.gameBoardArray[0][2] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[0][2] !== 'x') {
 					gameBoard.Player(0, 2, ++turn);
 					displayController.Display(0, 2, '#\\3' + e.target.id + ' ');
 				}
@@ -159,38 +219,80 @@ squareBoard.forEach((e) => {
 
 			// Row 2
 			case '3':
-				if (gameBoard.gameBoardArray[1][0] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[1][0] !== 'x') {
 					gameBoard.Player(1, 0, ++turn);
 					displayController.Display(1, 0, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '4':
-				if (gameBoard.gameBoardArray[1][1] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[1][1] !== 'x') {
 					gameBoard.Player(1, 1, ++turn);
 					displayController.Display(1, 1, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '5':
-				if (gameBoard.gameBoardArray[1][2] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[1][2] !== 'x') {
 					gameBoard.Player(1, 2, ++turn);
 					displayController.Display(1, 2, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			// Row 3
 			case '6':
-				if (gameBoard.gameBoardArray[2][0] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[2][0] !== 'x') {
 					gameBoard.Player(2, 0, ++turn);
 					displayController.Display(2, 0, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '7':
-				if (gameBoard.gameBoardArray[2][1] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[2][1] !== 'x') {
 					gameBoard.Player(2, 1, ++turn);
 					displayController.Display(2, 1, '#\\3' + e.target.id + ' ');
 				}
 				break;
 			case '8':
-				if (gameBoard.gameBoardArray[2][2] !== 'x') {
+				if (winCondition && round === 0) {
+					displayController.resetDisplayBoard();
+					gameBoard.gameBoardArray[0] = [];
+					gameBoard.gameBoardArray[1] = [];
+					gameBoard.gameBoardArray[2] = [];
+					console.log(gameBoard.gameBoardArray);
+					round = 1;
+				} else if (gameBoard.gameBoardArray[2][2] !== 'x') {
 					gameBoard.Player(2, 2, ++turn);
 					displayController.Display(2, 2, '#\\3' + e.target.id + ' ');
 				}
