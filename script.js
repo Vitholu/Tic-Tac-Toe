@@ -8,6 +8,65 @@ const gameBoard = (() => {
 	return { gameBoardArray, Player };
 })();
 
+const winCondition = () => {
+	if (
+		gameBoard.gameBoardArray[0][0] === 'x' &&
+		gameBoard.gameBoardArray[0][1] === 'x' &&
+		gameBoard.gameBoardArray[0][2] === 'x'
+	) {
+		console.log('0 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[1][0] === 'x' &&
+		gameBoard.gameBoardArray[1][1] === 'x' &&
+		gameBoard.gameBoardArray[1][2] === 'x'
+	) {
+		console.log('1 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[2][0] === 'x' &&
+		gameBoard.gameBoardArray[2][1] === 'x' &&
+		gameBoard.gameBoardArray[2][2] === 'x'
+	) {
+		console.log('2 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[0][0] === 'x' &&
+		gameBoard.gameBoardArray[1][0] === 'x' &&
+		gameBoard.gameBoardArray[2][0] === 'x'
+	) {
+		console.log('0-0 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[0][1] === 'x' &&
+		gameBoard.gameBoardArray[1][1] === 'x' &&
+		gameBoard.gameBoardArray[2][1] === 'x'
+	) {
+		console.log('1-1 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[0][2] === 'x' &&
+		gameBoard.gameBoardArray[1][2] === 'x' &&
+		gameBoard.gameBoardArray[2][2] === 'x'
+	) {
+		console.log('2-2 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[0][0] === 'x' &&
+		gameBoard.gameBoardArray[1][1] === 'x' &&
+		gameBoard.gameBoardArray[2][2] === 'x'
+	) {
+		console.log('0-0-0 -- Three');
+	}
+	if (
+		gameBoard.gameBoardArray[0][2] === 'x' &&
+		gameBoard.gameBoardArray[1][1] === 'x' &&
+		gameBoard.gameBoardArray[2][0] === 'x'
+	) {
+		console.log('1-1-1 -- Three');
+	}
+};
+
 const displayController = (() => {
 	const Display = (posY, posX, id) => {
 		let displayX = document.querySelector(id.toString());
@@ -15,6 +74,7 @@ const displayController = (() => {
 		if (displayX !== null) {
 			displayX.textContent = gameBoard.gameBoardArray[posY][posX];
 		}
+		winCondition();
 	};
 	return { Display };
 })();
