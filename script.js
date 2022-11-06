@@ -303,6 +303,8 @@ squareBoard.forEach((e) => {
 	});
 });
 
-// Assign each square an unique ID(1->9) - 1
-// If user clicks on square, and square is empty push "x" to array containing square.
-// Display "x" on square.
+/* TODO:
+	- Display winner name
+	- Add buttons for reset/start game
+	- Add player congratulate display element.
+*/
